@@ -21,14 +21,14 @@ public class PlaneManager : MonoBehaviour
     private Dictionary<ARPlane, float> planeAreas = new Dictionary<ARPlane, float>();
     private List<float> zoneAreas = new List<float>();
     private List<float> zonePaintCalculation = new List<float>(); 
-    private List<float> zoneSliderValue = new List<float>(); // New
+    private List<float> zoneSliderValue = new List<float>(); 
     private int currentZoneIndex = 0;
     
     void Start()
     {
         zoneAreas.Add(0.0f);
         zonePaintCalculation.Add(0.0f); 
-        zoneSliderValue.Add(0.0f); // New
+        zoneSliderValue.Add(0.0f); 
         UpdateZoneDropdown();
         uiElements.SetActive(false);
         CreateBackgroundPanel();
@@ -163,7 +163,6 @@ public class PlaneManager : MonoBehaviour
         zoneSliderValue.Add(0.0f);
         currentZoneIndex = zoneAreas.Count - 1;
         UpdateZoneDropdown();
-       // ResetSlider();
     }
 
 
@@ -183,11 +182,6 @@ public class PlaneManager : MonoBehaviour
             {
                 ResetSlider();
             }
-            /*else
-            {
-                CalculateAndDispayResults();    
-            }
-            ResetSlider();*/
         }
     }
 
@@ -211,7 +205,6 @@ public class PlaneManager : MonoBehaviour
         totalAreaText.text = $"Room Area: {zoneAreas[currentZoneIndex]:F2} ft^2";
         totalCumulativeAreaText.text = $"Total Area: {cumulativeArea:F2} ft^2";
 
-        // New
         if (currentZoneIndex < zonePaintCalculation.Count)
         {
             paintAmount.text = $"Paint Needed: {zonePaintCalculation[currentZoneIndex]:F2} gallons";
@@ -246,7 +239,6 @@ public class PlaneManager : MonoBehaviour
 
         paintAmount.text = $"Paint Needed: {paintNeeded:F2} gallons";
 
-        // New
         if (currentZoneIndex < zonePaintCalculation.Count)
         {
             zonePaintCalculation[currentZoneIndex] = paintNeeded;
