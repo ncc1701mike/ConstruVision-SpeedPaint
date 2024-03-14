@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/ConstruVision.unity
+    path: Assets/_SpeedPaint/Scenes/ConstruVision.unity
     guid: 9494ab6837dfd4226bddbba0f160af25
   m_configObjects:
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 744b813df90924c169af73489b8325de,
