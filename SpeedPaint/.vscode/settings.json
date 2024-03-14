@@ -51,5 +51,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "ConstruVision-SpeedPaint.sln"
+    "dotnet.defaultSolution": "SpeedPaint.sln"
 }
