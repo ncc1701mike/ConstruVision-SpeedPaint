@@ -9,6 +9,8 @@ EditorBuildSettings:
     path: Assets/_SpeedPaint/Scenes/ConstruVision.unity
     guid: 9494ab6837dfd4226bddbba0f160af25
   m_configObjects:
+    Niantic.Lightship.AR.LightshipSettings: {fileID: 11400000, guid: c8964dce7bfea004882d7f5fffd3803f,
+      type: 2}
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 744b813df90924c169af73489b8325de,
       type: 2}
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 89a6d18d3df8d3e4fa917b0f9a963bc0,
