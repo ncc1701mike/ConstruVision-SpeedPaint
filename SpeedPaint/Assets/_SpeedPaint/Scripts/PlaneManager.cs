@@ -12,29 +12,29 @@ public class PlaneManager : MonoBehaviour
     public GameObject uiElements;
     public GameObject panel;
     public TMP_Dropdown zoneDropdown;
-    public Slider zoneSlider; 
-    
+    public Slider zoneSlider;
+
     private const float metersToFt = 3.28084f;
     private float cumulativeArea = 0.0f;
     private float sliderValue = 0.0f;
     private HashSet<ARPlane> selectedPlanes = new HashSet<ARPlane>();
     private Dictionary<ARPlane, float> planeAreas = new Dictionary<ARPlane, float>();
     private List<float> zoneAreas = new List<float>();
-    private List<float> zonePaintCalculation = new List<float>(); 
-    private List<float> zoneSliderValue = new List<float>(); 
+    private List<float> zonePaintCalculation = new List<float>();
+    private List<float> zoneSliderValue = new List<float>();
     private int currentZoneIndex = 0;
-    
+
     void Start()
     {
         zoneAreas.Add(0.0f);
-        zonePaintCalculation.Add(0.0f); 
-        zoneSliderValue.Add(0.0f); 
+        zonePaintCalculation.Add(0.0f);
+        zoneSliderValue.Add(0.0f);
         UpdateZoneDropdown();
         uiElements.SetActive(false);
         CreateBackgroundPanel();
     }
 
-     public void ShowPlaneSize(ARPlane plane)
+    public void ShowPlaneSize(ARPlane plane)
     {
         if (!selectedPlanes.Contains(plane))
         {
@@ -54,9 +54,9 @@ public class PlaneManager : MonoBehaviour
             float areaInSquareFeet = widthInFeet * heightInFeet;
 
             // Update Area Calculations
-             UpdateZoneArea(areaInSquareFeet);
-             cumulativeArea += areaInSquareFeet;
-             totalCumulativeAreaText.text = $"Total Area: {cumulativeArea:F2} ft^2";
+            UpdateZoneArea(areaInSquareFeet);
+            cumulativeArea += areaInSquareFeet;
+            totalCumulativeAreaText.text = $"Total Area: {cumulativeArea:F2} ft^2";
 
             // Update Dictionary & UI 
             planeAreas[plane] = areaInSquareFeet;
@@ -64,7 +64,7 @@ public class PlaneManager : MonoBehaviour
             CalculateAndDispayResults();
 
             // Update Dropdown & Paint Amount UI
-            if(!uiElements.activeSelf)
+            if (!uiElements.activeSelf)
             {
                 InitializeSliderAndPaintAmount();
             }
@@ -196,7 +196,7 @@ public class PlaneManager : MonoBehaviour
         }
 
         zoneDropdown.AddOptions(options);
-        zoneDropdown.value = currentZoneIndex; 
+        zoneDropdown.value = currentZoneIndex;
     }
 
 

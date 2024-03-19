@@ -28,8 +28,6 @@ public class ProgressionSystem : MonoBehaviour
         ceilingComplete = true;
     }
 
-
-
     private IEnumerator InstructionProgression()
     {
         game_UI.ShowFloorInstructions();
